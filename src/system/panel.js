@@ -1,9 +1,5 @@
-import styled from 'styled-components'
 import system from 'system-components'
-import { border, color, space } from 'styled-system'
-import { borderTopLeftRadius, borderTopRightRadius } from './functions'
 import { Box } from './box'
-import { Heading } from './heading'
 
 const panelDefaults = {
   border: 1,
@@ -18,21 +14,21 @@ export const Panel = system(
     borderRadius: panelDefaults.borderRadius,
     borderColor: panelDefaults.borderColor,
   },
-  'borderRadius',
+  {
+    overflow: 'hidden',
+  },
 )
 
 Panel.displayName = 'Panel'
 
-Panel.Header = styled(Heading.h3)`
-  ${color};
-  ${space};
-  ${border};
-  ${borderTopLeftRadius};
-  ${borderTopRightRadius};
-  + p {
-    padding: 0 16px;
-  }
-`
+Panel.Header = system({
+  is: 'header',
+  fontSize: 2,
+  p: 2,
+  bg: 'white',
+  borderBottom: 1,
+  borderColor: 'gray',
+})
 
 Panel.Header.defaultProps = {
   bg: 'blacks.8',

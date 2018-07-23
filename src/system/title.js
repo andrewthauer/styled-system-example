@@ -7,6 +7,7 @@ export const Title = system({
   fontFamily: 'serif',
   mb: 4,
   borderBottom: 2,
+  textStyle: 'smallcaps',
 })
 
 Title.displayName = 'Title'

@@ -1,0 +1,38 @@
+const colors = {
+  black: '#000e1a',
+  gray: '#777',
+  'light-gray': '#aaa',
+  silver: '#999',
+  white: '#fff',
+  transparent: 'transparent',
+  red: '#aa3333',
+  green: '#30aa00',
+  lime: '#ddee44',
+  blue: '#007ce0',
+  navy: '#004175',
+  yellow: '#ddcc00',
+  orange: '#dd8800',
+  blacks: [
+    'hsl(0, 0%, 0%)',
+    'hsl(0, 0%, 10%)',
+    'hsl(0, 0%, 20%)',
+    'hsl(0, 0%, 40%)',
+    'hsl(0, 0%, 40%)',
+    'hsl(0, 0%, 50%)',
+    'hsl(0, 0%, 60%)',
+    'hsl(0, 0%, 70%)',
+    'hsl(0, 0%, 80%)',
+    'hsl(0, 0%, 90%)',
+  ],
+  whites: [
+    'hsl(0, 0%, 100%)',
+    'hsl(0, 0%, 95%)',
+    'hsl(0, 0%, 90%)',
+    'hsl(0, 0%, 80%)',
+    'hsl(0, 0%, 70%)',
+    'hsl(0, 0%, 60%)',
+    'hsl(0, 0%, 50%)',
+  ],
+}
+
+export default colors

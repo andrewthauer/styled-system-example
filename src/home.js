@@ -1,5 +1,15 @@
 import React from 'react'
-import { Box, Container, Heading, Panel, Text, Title } from './system'
+import { range } from 'ramda'
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  Panel,
+  Text,
+  Title,
+} from './system'
 
 const lorem = `
   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam aut,
@@ -23,16 +33,27 @@ export const Home = (props) => (
     <HomeBox width={1 / 2} bg="navy" color="whites.1">
       <HomeBoxHeader color="whites.1">Box (half width)</HomeBoxHeader>
       <Text>{lorem}</Text>
+      <Flex flexWrap="wrap" my={3}>
+        {range(1, 11).map((i) => (
+          <Box bg="red" m={1} p={3} width={60} textAlign="center">
+            Box {i}
+          </Box>
+        ))}
+      </Flex>
     </HomeBox>
 
     <HomeBox width={1 / 3} bg="orange" color="whites.1">
       <HomeBoxHeader>Box (third width)</HomeBoxHeader>
-      <Text>{lorem}</Text>
+      <Box p={3}>
+        <Button primary>Click Me</Button>
+      </Box>
     </HomeBox>
 
     <Panel bg="white">
       <Panel.Header>Panel</Panel.Header>
-      <Text>{lorem}</Text>
+      <Box p={3}>
+        <Text>{lorem}</Text>
+      </Box>
     </Panel>
   </Container>
 )

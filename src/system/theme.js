@@ -1,74 +1,100 @@
+import colors from './colors'
+
+const space = [0, 4, 8, 16, 32, 64, 128, 256, 512]
+const fontSizes = [12, 14, 16, 20, 24, 36, 48, 80, 96]
+
+const radii = [0, 2, 4, 16, 9999, '100%']
+const width = [16, 32, 64, 128, 256]
+const heights = [16, 32, 64, 128, 256]
+const maxWidths = [16, 32, 64, 128, 256, 512, 768, 1024, 1536]
+
+const fontWeights = {
+  normal: 400,
+  subtle: 100,
+  bold: 600,
+}
+
+const lineHeights = {
+  solid: 1,
+  title: 1.25,
+  copy: 1.5,
+}
+
+const letterSpacings = {
+  normal: 'normal',
+  tracked: '0.1em',
+  tight: '-0.05em',
+  mega: '0.25em',
+}
+
+const fonts = {
+  serif: 'athelas, georgia, times, serif',
+  sansSerif:
+    '"avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
+}
+
+const borders = [
+  0,
+  '1px solid',
+  '2px solid',
+  '4px solid',
+  '8px solid',
+  '16px solid',
+  '32px solid',
+]
+
+const colorStyles = {
+  warning: {
+    color: 'black',
+    backgroundColor: 'orange',
+  },
+  error: {
+    color: 'white',
+    backgroundColor: 'red',
+  },
+}
+
+const textStyles = {
+  smallcaps: {
+    fontVariant: 'small-caps',
+  },
+}
+
+const buttons = {
+  default: {
+    color: 'white',
+    backgroundColor: 'blue',
+  },
+  primary: {
+    color: 'white',
+    backgroundColor: 'red',
+    '&:hover': {
+      backgroundColor: 'black',
+    },
+  },
+}
+
+// custom
+const maxContainerWidth = '1024px'
+
 export const theme = {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fontSizes: [12, 14, 16, 20, 24, 36, 48, 80, 96],
-  // fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-  fontWeights: {
-    normal: 400,
-    subtle: 100,
-    bold: 600,
-  },
-  lineHeights: {
-    solid: 1,
-    title: 1.25,
-    copy: 1.5,
-  },
-  letterSpacings: {
-    normal: 'normal',
-    tracked: '0.1em',
-    tight: '-0.05em',
-    mega: '0.25em',
-  },
-  fonts: {
-    serif: 'athelas, georgia, times, serif',
-    sansSerif:
-      '"avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
-  },
-  borders: [
-    0,
-    '1px solid',
-    '2px solid',
-    '4px solid',
-    '8px solid',
-    '16px solid',
-    '32px solid',
-  ],
-  radii: [0, 2, 4, 16, 9999, '100%'],
-  width: [16, 32, 64, 128, 256],
-  heights: [16, 32, 64, 128, 256],
-  maxWidths: [16, 32, 64, 128, 256, 512, 768, 1024, 1536],
-  colors: {
-    black: '#000e1a',
-    gray: '#777',
-    silver: '#999',
-    white: '#fff',
-    transparent: 'transparent',
-    red: '#aa3333',
-    green: '#30aa00',
-    lime: '#ddee44',
-    blue: '#007ce0',
-    navy: '#004175',
-    yellow: '#ddcc00',
-    orange: '#dd8800',
-    blacks: [
-      'hsl(0, 0%, 0%)',
-      'hsl(0, 0%, 10%)',
-      'hsl(0, 0%, 20%)',
-      'hsl(0, 0%, 40%)',
-      'hsl(0, 0%, 40%)',
-      'hsl(0, 0%, 50%)',
-      'hsl(0, 0%, 60%)',
-      'hsl(0, 0%, 70%)',
-      'hsl(0, 0%, 80%)',
-      'hsl(0, 0%, 90%)',
-    ],
-    whites: [
-      'hsl(0, 0%, 100%)',
-      'hsl(0, 0%, 95%)',
-      'hsl(0, 0%, 90%)',
-      'hsl(0, 0%, 80%)',
-    ],
-  },
-  maxContainerWidth: '1024px',
+  space,
+  borders,
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  letterSpacings,
+  radii,
+  width,
+  heights,
+  maxWidths,
+  colors,
+  textStyles,
+  colorStyles,
+  buttons,
+  // custom
+  maxContainerWidth,
 }
 
 export default theme
