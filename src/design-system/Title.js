@@ -1,5 +1,5 @@
 import system from 'system-components'
-import { Heading } from './heading'
+import { Heading } from './Heading'
 
 export const Title = system({
   is: Heading.h1,

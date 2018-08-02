@@ -74,25 +74,28 @@ const buttons = {
   },
 }
 
+const breakpoints = ['40em', '52em', '64em']
+
 // custom
 const maxContainerWidth = '1024px'
 
 export const theme = {
-  space,
   borders,
+  breakpoints,
+  buttons,
+  colors,
+  colorStyles,
   fonts,
   fontSizes,
   fontWeights,
-  lineHeights,
-  letterSpacings,
-  radii,
-  width,
   heights,
+  letterSpacings,
+  lineHeights,
   maxWidths,
-  colors,
+  radii,
+  space,
   textStyles,
-  colorStyles,
-  buttons,
+  width,
   // custom
   maxContainerWidth,
 }

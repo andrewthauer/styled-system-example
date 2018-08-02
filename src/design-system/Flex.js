@@ -1,14 +1,14 @@
 import system from 'system-components'
-import { Box } from './box'
+import { Box } from './Box'
 
 export const Flex = system(
   {
     is: Box,
   },
   { display: 'flex' },
+  'alignItems',
   'flexWrap',
   'flexDirection',
-  'alignItems',
   'justifyContent',
 )
 

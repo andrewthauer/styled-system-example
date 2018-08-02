@@ -1,5 +1,5 @@
 import system from 'system-components'
-import { Box } from './box'
+import { Box } from './Box'
 
 const panelDefaults = {
   border: 1,

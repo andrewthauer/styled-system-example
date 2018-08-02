@@ -3,16 +3,13 @@ import system from 'system-components'
 export const Box = system(
   {},
   (props) => ({ boxSizing: 'border-box' }),
-  'space',
-  'width',
+  'alignSelf',
   'color',
-  'display',
   'flex',
   'fontSize',
   'order',
-  'textAlign',
-  'alignSelf',
-  'alignItems',
+  'space',
+  'width',
 )
 
 Box.displayName = 'Box'

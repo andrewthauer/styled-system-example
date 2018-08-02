@@ -3,13 +3,12 @@ import { range } from 'ramda'
 import {
   Box,
   Button,
-  Container,
   Flex,
   Heading,
   Panel,
   Text,
   Title,
-} from './system'
+} from '../design-system'
 
 const lorem = `
   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam aut,
@@ -18,20 +17,20 @@ const lorem = `
   accusantium odit!
 `
 
-const HomeBox = (props) => <Box {...props} my={3} p={3} />
-const HomeBoxHeader = (props) => <Heading {...props} is="header" />
+const CustomBox = (props) => <Box {...props} my={3} p={3} />
+const CustomBoxHeader = (props) => <Heading {...props} is="header" />
 
-export const Home = (props) => (
-  <Container bg="blacks.9" p={4} m={2}>
-    <Title>Page Title</Title>
+export const Typography = (props) => (
+  <Box bg="blacks.9" p={4} m={2}>
+    <Title>Typography</Title>
 
-    <HomeBox bg="blue" color="whites.1">
-      <HomeBoxHeader>Box (full width)</HomeBoxHeader>
+    <CustomBox bg="blue" color="whites.1">
+      <CustomBoxHeader>Box (full width)</CustomBoxHeader>
       <Text>{lorem}</Text>
-    </HomeBox>
+    </CustomBox>
 
-    <HomeBox width={1 / 2} bg="navy" color="whites.1">
-      <HomeBoxHeader color="whites.1">Box (half width)</HomeBoxHeader>
+    <CustomBox width={1 / 2} bg="navy" color="whites.1">
+      <CustomBoxHeader color="whites.1">Box (half width)</CustomBoxHeader>
       <Text>{lorem}</Text>
       <Flex flexWrap="wrap" my={3}>
         {range(1, 11).map((i) => (
@@ -40,14 +39,14 @@ export const Home = (props) => (
           </Box>
         ))}
       </Flex>
-    </HomeBox>
+    </CustomBox>
 
-    <HomeBox width={1 / 3} bg="orange" color="whites.1">
-      <HomeBoxHeader>Box (third width)</HomeBoxHeader>
+    <CustomBox width={1 / 3} bg="orange" color="whites.1">
+      <CustomBoxHeader>Box (third width)</CustomBoxHeader>
       <Box p={3}>
         <Button primary>Click Me</Button>
       </Box>
-    </HomeBox>
+    </CustomBox>
 
     <Panel bg="white">
       <Panel.Header>Panel</Panel.Header>
@@ -55,7 +54,7 @@ export const Home = (props) => (
         <Text>{lorem}</Text>
       </Box>
     </Panel>
-  </Container>
+  </Box>
 )
 
-export default Home
+export default Typography

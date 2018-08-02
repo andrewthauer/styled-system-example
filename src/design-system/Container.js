@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { theme } from './theme'
-import { Box } from './box'
+import { Box } from './Box'
 
 const maxWidth = (props) =>
   props.maxWidth

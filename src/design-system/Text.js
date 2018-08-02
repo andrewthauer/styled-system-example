@@ -6,13 +6,13 @@ export const Text = system(
     px: 2,
     lineHeight: 'copy',
   },
-  'space',
   'color',
   'fontFamily',
   'fontSize',
   'fontWeight',
-  'textAlign',
   'lineHeight',
+  'space',
+  'textAlign',
 )
 
 Text.displayName = 'Text'

@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import { ThemeProvider } from 'styled-components'
-import theme from './system/theme'
-import { Home } from './home'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+import theme from './design-system/theme'
+import AppShell from './AppShell'
 
 export class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Home />
+        <Router>
+          <AppShell />
+        </Router>
       </ThemeProvider>
     )
   }
