@@ -20,7 +20,7 @@ const lorem = `
 const CustomBox = (props) => <Box {...props} my={3} p={3} />
 const CustomBoxHeader = (props) => <Heading {...props} is="header" />
 
-export const Typography = (props) => (
+export const Typography = () => (
   <Box bg="blacks.9" p={4} m={2}>
     <Title>Typography</Title>
 
@@ -34,7 +34,7 @@ export const Typography = (props) => (
       <Text>{lorem}</Text>
       <Flex flexWrap="wrap" my={3}>
         {range(1, 11).map((i) => (
-          <Box bg="red" m={1} p={3} width={60} textAlign="center">
+          <Box key={i} bg="red" m={1} p={3} width={60} textAlign="center">
             Box {i}
           </Box>
         ))}
@@ -56,5 +56,7 @@ export const Typography = (props) => (
     </Panel>
   </Box>
 )
+
+Typography.displayName = 'Typography'
 
 export default Typography

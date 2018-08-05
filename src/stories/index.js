@@ -1,23 +1,23 @@
+/* eslint-disable no-undef */
+
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { linkTo } from '@storybook/addon-links'
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
-
-// import { Button, Welcome } from '@storybook/react/demo'
+// import { linkTo } from '@storybook/addon-links'
+import { withKnobs, text } from '@storybook/addon-knobs'
 
 import {
   Box,
   Button,
-  Container,
-  Flex,
-  Heading,
-  Link,
-  NavLink,
-  Panel,
-  Text,
-  Title,
+  // Container,
+  // Flex,
+  // Heading,
+  // Link,
+  // NavLink,
+  // Panel,
+  // Text,
+  // Title,
 } from '../design-system'
 
 storiesOf('Welcome', module).add('to Storybook', () => (

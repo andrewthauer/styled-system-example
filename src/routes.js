@@ -1,5 +1,14 @@
+/* eslint-disable react/display-name */
+
 import React from 'react'
-import { Buttons, Home, NotFound, Responsive, Typography } from './pages'
+import {
+  Buttons,
+  Home,
+  GridLayout,
+  NotFound,
+  Responsive,
+  Typography,
+} from './pages'
 
 export const routes = [
   {
@@ -17,6 +26,11 @@ export const routes = [
     path: '/buttons',
     title: 'Buttons',
     component: () => <Buttons />,
+  },
+  {
+    path: '/grid',
+    title: 'Grid',
+    component: () => <GridLayout />,
   },
   {
     path: '/responsive',

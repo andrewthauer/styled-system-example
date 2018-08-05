@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  Box,
-  Column,
-  Divider,
-  Flex,
-  Heading,
-  Row,
-  Title,
-} from '../design-system'
+import { Box, Column, Flex, Heading, Row, Title } from '../design-system'
 
 export const Responsive = () => (
   <Box>
@@ -48,5 +40,7 @@ export const Responsive = () => (
     </Box>
   </Box>
 )
+
+Responsive.displayName = 'Responsive'
 
 export default Responsive

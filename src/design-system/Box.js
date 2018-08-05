@@ -1,8 +1,9 @@
 import system from 'system-components'
+import { borderRadii, gridArea } from './styles'
 
 export const Box = system(
   {},
-  (props) => ({ boxSizing: 'border-box' }),
+  () => ({ boxSizing: 'border-box' }),
   'alignSelf',
   'color',
   'flex',
@@ -10,6 +11,9 @@ export const Box = system(
   'order',
   'space',
   'width',
+  'textAlign',
+  gridArea,
+  borderRadii,
 )
 
 Box.displayName = 'Box'

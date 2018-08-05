@@ -7,4 +7,6 @@ export const NotFound = () => (
   </Box>
 )
 
+NotFound.displayName = 'NotFound'
+
 export default NotFound

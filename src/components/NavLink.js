@@ -1,9 +1,12 @@
-import React from 'react'
-import { styleNavLink } from '../design-system'
+import PropTypes from 'prop-types'
+import { styledNavLink } from '../design-system'
 import { Link } from 'react-router-dom'
 
-const StyledLink = styleNavLink(Link)
+export const NavLink = styledNavLink(Link)
 
-export const NavLink = ({ ...props, to, children }) => <StyledLink to={props.to} {...props}>{children}</StyledLink>
+NavLink.propTypes = {
+  to: PropTypes.string,
+  children: PropTypes.any,
+}
 
 export default NavLink

@@ -1,3 +1,6 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import { space } from 'styled-system'
 import system from 'system-components'
 import { themeGet } from 'styled-system'
 
@@ -31,14 +34,31 @@ export const Button = system(
     color: defaultColors.color,
     bg: defaultColors.bg,
   },
-  {
+  (props) => ({
     cursor: 'pointer',
-  },
+    '&:hover': {
+      backgroundColor: themeGet('colors.navy')(props),
+    },
+  }),
   (props) => props.default && defaultButtonStyle(props),
   (props) => props.primary && primaryButtonStyle(props),
+  (props) => props.large && { fontSize: 3, space },
   'color',
+  'buttonStyle',
 )
 
 Button.displayName = 'Button'
+
+Button.propTypes = {
+  default: PropTypes.bool,
+  primary: PropTypes.bool,
+  large: PropTypes.bool,
+}
+
+Button.Small = (props) => <Button {...props} fontSize={1} px={1} py={1} />
+Button.Small.displayName = 'Button.Small'
+
+Button.Large = (props) => <Button {...props} fontSize={3} p={2} />
+Button.Large.displayName = 'Button.Large'
 
 export default Button

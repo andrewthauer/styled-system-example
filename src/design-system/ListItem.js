@@ -1,6 +1,8 @@
-import React from 'react'
+import system from 'system-components'
 
-export const ListItem = ({ children, ...props }) => <li>{children}</li>
+export const ListItem = system({
+  as: 'li',
+})
 
 ListItem.displayName = 'ListItem'
 

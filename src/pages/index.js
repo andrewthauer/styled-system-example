@@ -1,4 +1,5 @@
 export * from './Buttons'
+export * from './GridLayout'
 export * from './Home'
 export * from './NotFound'
 export * from './Responsive'

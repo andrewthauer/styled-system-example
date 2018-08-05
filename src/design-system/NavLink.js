@@ -1,6 +1,6 @@
 import system from 'system-components'
 
-export const styleNavLink = (link) => {
+export const styledNavLink = (link) => {
   return system(
     {
       is: link,
@@ -14,7 +14,7 @@ export const styleNavLink = (link) => {
   )
 }
 
-export const NavLink = styleNavLink('a')
+export const NavLink = styledNavLink('a')
 
 NavLink.displayName = 'NavLink'
 
