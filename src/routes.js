@@ -1,14 +1,7 @@
 /* eslint-disable react/display-name */
 
 import React from 'react'
-import {
-  Buttons,
-  Home,
-  GridLayout,
-  NotFound,
-  Responsive,
-  Typography,
-} from './pages'
+import { Boxes, Buttons, Home, Grids, NotFound, Responsive } from './pages'
 
 export const routes = [
   {
@@ -18,9 +11,9 @@ export const routes = [
     component: () => <Home />,
   },
   {
-    path: '/typography',
-    title: 'Typography',
-    component: () => <Typography />,
+    path: '/boxes',
+    title: 'Boxes',
+    component: () => <Boxes />,
   },
   {
     path: '/buttons',
@@ -28,9 +21,9 @@ export const routes = [
     component: () => <Buttons />,
   },
   {
-    path: '/grid',
-    title: 'Grid',
-    component: () => <GridLayout />,
+    path: '/grids',
+    title: 'Grids',
+    component: () => <Grids />,
   },
   {
     path: '/responsive',

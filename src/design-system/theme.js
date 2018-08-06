@@ -1,7 +1,7 @@
 import colors from './colors'
 
 const space = [0, 4, 8, 16, 32, 64, 128, 256, 512]
-const fontSizes = [12, 14, 16, 20, 24, 36, 48, 80, 96]
+const fontSizes = [12, 14, 16, 20, 24, 36, 48]
 
 const radii = [0, 2, 4, 16, 9999, '100%']
 const width = [16, 32, 64, 128, 256]
@@ -43,10 +43,15 @@ const borders = [
   '32px solid',
 ]
 
+const breakpoints = ['40em', '52em', '64em']
+
+// variants
+
 const colorStyles = {
+  normal: {},
   warning: {
-    color: 'black',
-    backgroundColor: 'orange',
+    color: 'orange',
+    backgroundColor: 'blue',
   },
   error: {
     color: 'white',
@@ -55,6 +60,10 @@ const colorStyles = {
 }
 
 const textStyles = {
+  caps: {
+    textTransform: 'uppercase',
+    letterSpacing: '0.2em',
+  },
   smallcaps: {
     fontVariant: 'small-caps',
   },
@@ -62,22 +71,53 @@ const textStyles = {
 
 const buttons = {
   default: {
-    color: 'white',
-    backgroundColor: 'blue',
+    color: colors.text,
+    backgroundColor: colors.gray,
   },
   primary: {
-    color: 'white',
-    backgroundColor: 'red',
+    color: colors.text,
+    backgroundColor: colors.blue,
     '&:hover': {
-      backgroundColor: 'black',
+      backgroundColor: colors.lightBlue,
+    },
+  },
+  secondary: {
+    color: colors.white,
+    backgroundColor: colors.purple,
+    '&:hover': {
+      backgroundColor: colors.lightPurple,
     },
   },
 }
 
-const breakpoints = ['40em', '52em', '64em']
-
 // custom
+
 const maxContainerWidth = '1024px'
+
+const cardStyles = {
+  normal: {},
+  selected: {
+    color: colors.white,
+    background: colors.blue,
+    borderColor: colors.border,
+  },
+}
+
+const buttonTypes = buttons
+
+const buttonSizes = {
+  normal: {},
+  small: {},
+  large: {},
+  xlarge: {},
+}
+
+const buttonStyles = {
+  outline: {
+    backgroundColor: colors.transparent,
+    // borderColor: 'default',
+  },
+}
 
 export const theme = {
   borders,
@@ -98,6 +138,11 @@ export const theme = {
   width,
   // custom
   maxContainerWidth,
+  // custom variants
+  buttonSizes,
+  buttonStyles,
+  buttonTypes,
+  cardStyles,
 }
 
 export default theme

@@ -4,10 +4,11 @@ import { Heading } from './Heading'
 export const Title = system(
   {
     is: Heading.h1,
-    fontSize: 7,
+    fontSize: 6,
     fontFamily: 'serif',
-    mb: 4,
     borderBottom: 2,
+    mb: 4,
+    lineHeight: 'title',
     textStyle: 'smallcaps',
   },
   'borders',

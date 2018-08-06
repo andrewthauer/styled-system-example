@@ -1,5 +1,5 @@
 import system from 'system-components'
-import { borderRadii, gridArea } from './styles'
+import { flexbox } from './styles'
 
 export const Box = system(
   {},
@@ -12,8 +12,7 @@ export const Box = system(
   'space',
   'width',
   'textAlign',
-  gridArea,
-  borderRadii,
+  flexbox,
 )
 
 Box.displayName = 'Box'

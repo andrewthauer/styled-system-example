@@ -11,7 +11,7 @@ const gridStyle = {
   `,
 }
 
-export const GridLayout = () => (
+export const Grids = () => (
   <Box>
     <Title>Grid</Title>
     <Grid width={1} bg="blue" color="white" {...gridStyle}>
@@ -28,6 +28,6 @@ export const GridLayout = () => (
   </Box>
 )
 
-GridLayout.displayName = 'GridLayout'
+Grids.displayName = 'Grids'
 
-export default GridLayout
+export default Grids

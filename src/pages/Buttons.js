@@ -19,7 +19,15 @@ export const Buttons = () => (
       </Button>
 
       <Button {...style} variant="primary">
-        Primary Variant Button
+        Primary Button Variant
+      </Button>
+
+      <Button {...style} variant="secondary">
+        Secondary Button Variant
+      </Button>
+
+      <Button {...style} variant="secondary" buttonStyle="outline">
+        Secondary Button Variant
       </Button>
 
       <Button.Small {...style}>Small Button</Button.Small>

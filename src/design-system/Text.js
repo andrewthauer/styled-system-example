@@ -3,7 +3,7 @@ import system from 'system-components'
 export const Text = system(
   {
     is: 'p',
-    px: 2,
+    fontSize: 2,
     lineHeight: 'copy',
   },
   'color',
@@ -13,6 +13,7 @@ export const Text = system(
   'lineHeight',
   'space',
   'textAlign',
+  'colorStyle',
 )
 
 Text.displayName = 'Text'

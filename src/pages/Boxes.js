@@ -3,6 +3,7 @@ import { range } from 'ramda'
 import {
   Box,
   Button,
+  Card,
   Flex,
   Heading,
   Panel,
@@ -20,17 +21,17 @@ const lorem = `
 const CustomBox = (props) => <Box {...props} my={3} p={3} />
 const CustomBoxHeader = (props) => <Heading {...props} is="header" />
 
-export const Typography = () => (
-  <Box bg="blacks.9" p={4} m={2}>
-    <Title>Typography</Title>
+export const Boxes = () => (
+  <Box bg="lightGray" p={4} m={2}>
+    <Title>Boxes</Title>
 
-    <CustomBox bg="blue" color="whites.1">
+    <CustomBox bg="blue" color="white">
       <CustomBoxHeader>Box (full width)</CustomBoxHeader>
       <Text>{lorem}</Text>
     </CustomBox>
 
-    <CustomBox width={1 / 2} bg="navy" color="whites.1">
-      <CustomBoxHeader color="whites.1">Box (half width)</CustomBoxHeader>
+    <CustomBox width={1 / 2} bg="navy" color="white">
+      <CustomBoxHeader color="white">Box (half width)</CustomBoxHeader>
       <Text>{lorem}</Text>
       <Flex flexWrap="wrap" my={3}>
         {range(1, 11).map((i) => (
@@ -41,14 +42,27 @@ export const Typography = () => (
       </Flex>
     </CustomBox>
 
-    <CustomBox width={1 / 3} bg="orange" color="whites.1">
+    <CustomBox width={1 / 3} bg="orange" color="whites">
       <CustomBoxHeader>Box (third width)</CustomBoxHeader>
       <Box p={3}>
         <Button primary>Click Me</Button>
       </Box>
     </CustomBox>
 
-    <Panel bg="white">
+    <Panel border={1} borderColor="white" mt={2} p={2}>
+      <Heading.h3>Cards</Heading.h3>
+      <Flex flexWrap="wrap">
+        {range(1, 10).map((i) => (
+          <Box key={1} width={1 / 3} p={1}>
+            <Card key={i} cardStyle={i % 2 === 0 && 'selected'}>
+              Card {i}
+            </Card>
+          </Box>
+        ))}
+      </Flex>
+    </Panel>
+
+    <Panel bg="white" mt={2}>
       <Panel.Header>Panel</Panel.Header>
       <Box p={3}>
         <Text>{lorem}</Text>
@@ -57,6 +71,6 @@ export const Typography = () => (
   </Box>
 )
 
-Typography.displayName = 'Typography'
+Boxes.displayName = 'Boxes'
 
-export default Typography
+export default Boxes

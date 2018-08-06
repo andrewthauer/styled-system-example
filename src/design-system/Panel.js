@@ -5,8 +5,8 @@ export const Panel = system(
   {
     is: Box,
     border: 1,
-    borderRadius: 3,
-    borderColor: 'blacks',
+    borderColor: 'darkGray',
+    borderRadius: 2,
   },
   'borders',
   'borderColor',
