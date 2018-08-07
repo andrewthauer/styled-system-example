@@ -32,7 +32,7 @@ export const Responsive = () => (
     <Box
       m={[1, 2, 3, 4]}
       p={[1, 2, 3, 4]}
-      fontSize={[4, 5, 6, 7]}
+      fontSize={[3, 4, 5, 6]}
       bg={'red'}
       color={'white'}
     >

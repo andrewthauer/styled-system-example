@@ -1,23 +1,27 @@
 import colors from './colors'
 
+// Core
+
 const space = [0, 4, 8, 16, 32, 64, 128, 256, 512]
+const breakpoints = ['40em', '52em', '64em']
+const width = [16, 32, 64, 128, 256]
+const maxWidths = [16, 32, 64, 128, 256, 512, 768, 1024, 1536]
+const heights = [16, 32, 64, 128, 256]
+
+// Typography
+
 const fontSizes = [12, 14, 16, 20, 24, 36, 48]
 
-const radii = [0, 2, 4, 16, 9999, '100%']
-const width = [16, 32, 64, 128, 256]
-const heights = [16, 32, 64, 128, 256]
-const maxWidths = [16, 32, 64, 128, 256, 512, 768, 1024, 1536]
+const fonts = {
+  serif: 'athelas, georgia, times, serif',
+  sansSerif:
+    '"avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
+}
 
 const fontWeights = {
   normal: 400,
   subtle: 100,
   bold: 600,
-}
-
-const lineHeights = {
-  solid: 1,
-  title: 1.25,
-  copy: 1.5,
 }
 
 const letterSpacings = {
@@ -27,11 +31,15 @@ const letterSpacings = {
   mega: '0.25em',
 }
 
-const fonts = {
-  serif: 'athelas, georgia, times, serif',
-  sansSerif:
-    '"avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
+const lineHeights = {
+  solid: 1,
+  title: 1.25,
+  copy: 1.5,
 }
+
+// Borders
+
+const radii = [0, 2, 4, 16, 9999, '100%']
 
 const borders = [
   0,
@@ -43,56 +51,65 @@ const borders = [
   '32px solid',
 ]
 
-const breakpoints = ['40em', '52em', '64em']
-
-// variants
-
-const colorStyles = {
-  normal: {},
-  warning: {
-    color: 'orange',
-    backgroundColor: 'blue',
-  },
-  error: {
-    color: 'white',
-    backgroundColor: 'red',
-  },
-}
+// Variants
 
 const textStyles = {
+  capitalize: {
+    textTransform: 'capitalize',
+  },
+  lowercase: {
+    textTransform: 'lowercase',
+  },
   caps: {
     textTransform: 'uppercase',
-    letterSpacing: '0.2em',
   },
   smallcaps: {
     fontVariant: 'small-caps',
   },
 }
 
-const buttons = {
-  default: {
-    color: colors.text,
-    backgroundColor: colors.gray,
-  },
+const colorStyles = {
   primary: {
-    color: colors.text,
-    backgroundColor: colors.blue,
-    '&:hover': {
-      backgroundColor: colors.lightBlue,
-    },
+    backgroundColor: colors.styles.primary.main,
+    color: colors.styles.primary.contrast,
   },
   secondary: {
-    color: colors.white,
-    backgroundColor: colors.purple,
-    '&:hover': {
-      backgroundColor: colors.lightPurple,
-    },
+    backgroundColor: colors.styles.secondary.main,
+    color: colors.styles.secondary.contrast,
+  },
+  success: {
+    backgroundColor: colors.styles.success.main,
+    color: colors.styles.success.contrast,
+  },
+  danger: {
+    backgroundColor: colors.styles.danger.main,
+    color: colors.styles.danger.contrast,
+  },
+  warning: {
+    backgroundColor: colors.styles.warning.main,
+    color: colors.styles.warning.contrast,
+  },
+  info: {
+    backgroundColor: colors.styles.info.main,
+    color: colors.styles.info.contrast,
+  },
+  light: {
+    backgroundColor: colors.styles.light.main,
+    color: colors.styles.light.contrast,
+  },
+  dark: {
+    backgroundColor: colors.styles.dark.main,
+    color: colors.styles.dark.contrast,
   },
 }
 
-// custom
+const buttons = {}
+
+// Custom
 
 const maxContainerWidth = '1024px'
+
+// Custom Variants
 
 const cardStyles = {
   normal: {},
@@ -103,45 +120,39 @@ const cardStyles = {
   },
 }
 
-const buttonTypes = buttons
-
-const buttonSizes = {
-  normal: {},
-  small: {},
-  large: {},
-  xlarge: {},
-}
-
 const buttonStyles = {
   outline: {
     backgroundColor: colors.transparent,
-    // borderColor: 'default',
+    // borderColor: 'red',
   },
 }
 
 export const theme = {
-  borders,
+  // core
+  space,
   breakpoints,
-  buttons,
+  width,
+  maxWidths,
+  heights,
+  // color
   colors,
-  colorStyles,
+  // typography
   fonts,
   fontSizes,
   fontWeights,
-  heights,
   letterSpacings,
   lineHeights,
-  maxWidths,
+  // borders
   radii,
-  space,
+  borders,
+  // variants
   textStyles,
-  width,
+  colorStyles,
+  buttons,
   // custom
   maxContainerWidth,
   // custom variants
-  buttonSizes,
   buttonStyles,
-  buttonTypes,
   cardStyles,
 }
 

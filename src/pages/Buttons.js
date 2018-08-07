@@ -1,47 +1,81 @@
 import React from 'react'
-import { Box, Button, Flex, Title } from '../design-system'
-
-const style = {
-  my: 2,
-}
+import { FlowList } from '../components'
+import { Box, Button, Title } from '../design-system'
 
 export const Buttons = () => (
   <Box>
     <Title>Buttons</Title>
 
-    <Flex flexDirection="column" alignItems="start">
-      <Button {...style} py={1}>
-        Simple Button
+    <FlowList itemMargin={2}>
+      <Button buttonType="primary">Primary</Button>
+      <Button buttonType="secondary">Secondary</Button>
+      <Button buttonType="success">Success</Button>
+      <Button buttonType="danger">Danger</Button>
+      <Button buttonType="warning">Warning</Button>
+      <Button buttonType="info">Info</Button>
+      <Button buttonType="light">Light Button</Button>
+      <Button buttonType="dark">Dark Button</Button>
+    </FlowList>
+
+    <FlowList itemMargin={2}>
+      <Button buttonType="primary" buttonStyle="outline">
+        Primary
       </Button>
-
-      <Button {...style} primary>
-        Primary Prop Button
+      <Button buttonType="secondary" buttonStyle="outline">
+        Secondary
       </Button>
-
-      <Button {...style} variant="primary">
-        Primary Button Variant
+      <Button buttonType="success" buttonStyle="outline">
+        Success
       </Button>
-
-      <Button {...style} variant="secondary">
-        Secondary Button Variant
+      <Button buttonType="danger" buttonStyle="outline">
+        Danger
       </Button>
-
-      <Button {...style} variant="secondary" buttonStyle="outline">
-        Secondary Button Variant
+      <Button buttonType="warning" buttonStyle="outline">
+        Warning
       </Button>
-
-      <Button.Small {...style}>Small Button</Button.Small>
-
-      <Button.Large {...style}>Large Button</Button.Large>
-
-      <Button.Large {...style} primary>
-        Large Button
-      </Button.Large>
-
-      <Button {...style} large primary>
-        Large Primary
+      <Button buttonType="info" buttonStyle="outline">
+        Info
       </Button>
-    </Flex>
+      <Button buttonType="light" buttonStyle="outline">
+        Light Button
+      </Button>
+      <Button buttonType="dark" buttonStyle="outline">
+        Dark Button
+      </Button>
+    </FlowList>
+
+    <FlowList itemMargin={2}>
+      <Button.Small>Small</Button.Small>
+      <Button>Default</Button>
+      <Button.Large>Large</Button.Large>
+    </FlowList>
+
+    <FlowList itemMargin={2}>
+      <Button disabled buttonType="primary">
+        Primary
+      </Button>
+      <Button disabled buttonType="secondary">
+        Secondary
+      </Button>
+      <Button disabled buttonType="success">
+        Success
+      </Button>
+      <Button disabled buttonType="danger">
+        Danger
+      </Button>
+      <Button disabled buttonType="warning">
+        Warning
+      </Button>
+      <Button disabled buttonType="info">
+        Info
+      </Button>
+      <Button disabled buttonType="light">
+        Light Button
+      </Button>
+      <Button disabled buttonType="dark">
+        Dark Button
+      </Button>
+    </FlowList>
   </Box>
 )
 

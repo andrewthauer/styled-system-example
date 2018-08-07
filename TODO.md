@@ -5,5 +5,21 @@
   - variants vs extending vs custom props
   - some utility function to comb
   - When should a variant be used an not used
-  - Use styled-components css for buttons?
+  - Style merging
 - Theme switcher
+- Ability to get theme transformed value (e.g. space.getValue)
+
+# CSS Style Mapper
+
+```js
+export const itemMarginStyle = cssStyle({
+  prop: itemMarginStyle,
+  key: 'space',
+  transformValue: (n) => `${n}px`,
+  css: (value) => {
+    '> *': {
+      margin: value,
+    }
+  }
+}
+```

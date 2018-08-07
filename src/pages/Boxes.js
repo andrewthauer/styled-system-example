@@ -30,7 +30,7 @@ export const Boxes = () => (
       <Text>{lorem}</Text>
     </CustomBox>
 
-    <CustomBox width={1 / 2} bg="navy" color="white">
+    <CustomBox width={1 / 2} bg="blue" color="white">
       <CustomBoxHeader color="white">Box (half width)</CustomBoxHeader>
       <Text>{lorem}</Text>
       <Flex flexWrap="wrap" my={3}>

@@ -1,100 +1,83 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import system from 'system-components'
-import { space, themeGet, variant } from 'styled-system'
+import { css } from 'styled-components'
+import { themeGet } from 'styled-system'
 import { borderRadii } from './styles'
-// import theme from './theme'
+import theme from './theme'
 
-// const buttonStyles = theme.buttons
+const colors = theme.colors
+const colorStyles = colors.styles
+const buttonTypeKey = 'buttonType'
 
-const buttonType = variant({
-  prop: 'buttonType',
-  key: 'buttonTypes',
-})
-
-const buttonSize = variant({
-  prop: 'buttonSize',
-  key: 'buttonSizes',
-})
-
-const buttonStyle = variant({
-  prop: 'buttonStyle',
-  key: 'buttonStyles',
-})
-
-// import { css } from 'styled-components'
-// const buttonStyle = css`
-//   color: ${(props) => props.primary && themeGet(`colors.primary`)(props)};
-//   color: ${(props) => props.secondary && themeGet('colors.secondary')(props)};
-// `
-
-const defaultColors = {
-  color: 'black',
-  bg: 'light-gray',
+const defaults = {
+  colorStyle: 'secondary',
+  color: colorStyles.secondary.color,
+  background: colorStyles.secondary.backgroundColor,
 }
 
-const defaultButtonStyle = (props) => ({
-  color: themeGet(`colors.${defaultColors.color}`)(props),
-  backgroundColor: themeGet(`colors.${defaultColors.bg}`)(props),
+const defaultStyle = (colorStyle) => ({
+  backgroundColor: colorStyle.main,
+  borderColor: colors.border,
+  color: colorStyle.contrast,
 })
 
-const primaryButtonStyle = (props) => ({
-  color: themeGet('colors.white')(props),
-  backgroundColor: themeGet('colors.blue')(props),
-  '&:hover': {
-    backgroundColor: themeGet('colors.lightBlue')(props),
-  },
+const outlineStyle = (colorStyle, props) => ({
+  backgroundColor: 'transparent',
+  border: themeGet('borders.2')(props),
+  borderColor: colorStyle.main,
+  color: colorStyle.main,
 })
 
-// const secondaryButtonStyle = (props) => ({
-//   color: themeGet('colors.white')(props),
-//   backgroundColor: themeGet('colors.blue')(props),
-//   '&:hover': {
-//     backgroundColor: themeGet('colors.lightBlue')(props),
-//   },
-// })
+const buttonStyle = (props) => {
+  const type = props[buttonTypeKey] || 'secondary'
+  const colorStyle = colorStyles[type]
+  const style = props.buttonStyle || 'default'
+  return style === 'outline'
+    ? outlineStyle(colorStyle, props)
+    : defaultStyle(colorStyle, props)
+}
+
+const buttonCursorStyle = css`
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
+  opacity: ${(props) => (props.disabled ? 0.5 : 1.0)};
+`
+
+const buttonHoverStyle = (props) => {
+  if (props.disable) return {}
+  return {
+    '&:hover': {
+      opacity: 0.5,
+    },
+  }
+}
 
 export const Button = system(
   {
     is: 'button',
     fontSize: 1,
-    m: 0,
-    px: 3,
-    py: 2,
-    border: 0,
+    p: 2,
+    border: 1,
     borderRadius: 2,
-    color: defaultColors.color,
-    bg: defaultColors.bg,
+    color: defaults.color,
+    bg: defaults.background,
   },
-  (props) => ({
-    cursor: 'pointer',
-    '&:hover': {
-      backgroundColor: themeGet('colors.navy')(props),
-    },
-  }),
-  (props) => props.default && defaultButtonStyle(props),
-  (props) => props.primary && primaryButtonStyle(props),
-  (props) => props.large && { fontSize: 3, space },
+  'space',
   'color',
-  'buttonStyle',
+  // 'colorStyle',
+  // 'buttons',
   buttonStyle,
-  buttonSize,
-  buttonType,
+  buttonCursorStyle,
+  buttonHoverStyle,
   borderRadii,
 )
 
 Button.displayName = 'Button'
 
-Button.propTypes = {
-  default: PropTypes.bool,
-  primary: PropTypes.bool,
-  large: PropTypes.bool,
-}
-
-Button.Small = (props) => <Button {...props} fontSize={1} px={1} py={1} />
+Button.Small = (props) => <Button {...props} fontSize={1} p={2} />
 Button.Small.displayName = 'Button.Small'
 
-Button.Large = (props) => <Button {...props} fontSize={3} p={2} />
+Button.Large = (props) => <Button {...props} fontSize={3} p={3} />
 Button.Large.displayName = 'Button.Large'
 
 export default Button

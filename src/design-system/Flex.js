@@ -1,15 +1,13 @@
 import system from 'system-components'
 import { Box } from './Box'
+import { flexbox } from './styles'
 
 export const Flex = system(
   {
     is: Box,
   },
   { display: 'flex' },
-  'alignItems',
-  'flexWrap',
-  'flexDirection',
-  'justifyContent',
+  flexbox,
 )
 
 Flex.displayName = 'Flex'
