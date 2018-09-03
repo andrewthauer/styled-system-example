@@ -51,6 +51,12 @@ const borders = [
   '32px solid',
 ]
 
+// misc
+
+const shadows = ['none', `inset 0 0 0 1px ${colors.gray}`]
+
+const opacity = {}
+
 // Variants
 
 const textStyles = {
@@ -145,6 +151,9 @@ export const theme = {
   // borders
   radii,
   borders,
+  // misc
+  shadows,
+  opacity,
   // variants
   textStyles,
   colorStyles,

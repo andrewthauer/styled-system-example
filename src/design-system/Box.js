@@ -10,7 +10,13 @@ export const Box = system(
   'fontSize',
   'order',
   'space',
+  'display',
   'width',
+  'minWidth',
+  'maxWidth',
+  'height',
+  'minHeight',
+  'maxHeight',
   'textAlign',
   flexbox,
 )

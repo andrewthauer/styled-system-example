@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Box, Button, Heading, Lead, Text, Title } from '../design-system'
+import { FlowList } from '../components'
 
 const Article = (props) => <Box is="article" {...props} my={4} />
 const ArticleHeading = (props) => (
@@ -9,7 +10,7 @@ const ArticleHeading = (props) => (
 )
 
 export const Home = () => (
-  <Box>
+  <React.Fragment>
     <Title>Home</Title>
 
     <Article>
@@ -75,7 +76,15 @@ export const Home = () => (
 
       <Button borderRadiusTop={0}>Button</Button>
     </Article>
-  </Box>
+
+    <Heading>Flow List</Heading>
+    <FlowList fontSize="0">
+      <Box display="inline-table" bg="purple" width={2 / 3} minHeight={200} />
+      <Box display="inline-table" bg="red" width={1 / 3} minHeight={200} />
+      <Box display="inline-table" bg="blue" width={2 / 3} minHeight={200} />
+      <Box display="inline-table" bg="yellow" width={1 / 3} minHeight={200} />
+    </FlowList>
+  </React.Fragment>
 )
 
 Home.displayName = 'Home'

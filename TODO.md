@@ -8,6 +8,7 @@
   - Style merging
 - Theme switcher
 - Ability to get theme transformed value (e.g. space.getValue)
+- Use mixed
 
 # CSS Style Mapper
 
